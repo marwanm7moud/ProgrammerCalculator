@@ -85,7 +85,7 @@ class NumericalConverter {
         return try {
             number.toInt().toString(16)
         }catch (e:NumberFormatException){
-            "N/a"
+            "N/A"
         }
     }
 
@@ -93,7 +93,7 @@ class NumericalConverter {
         return try {
             number.toInt().toString(8)
         }catch (e:NumberFormatException){
-            "N/a"
+            "N/A"
         }
     }
 
@@ -101,7 +101,7 @@ class NumericalConverter {
         return try {
             number.toInt().toString(2)
         }catch (e:NumberFormatException){
-            "N/a"
+            "N/A"
         }
     }
 
@@ -109,7 +109,7 @@ class NumericalConverter {
         return try {
             number.toInt(2).toString()
         }catch (e:NumberFormatException){
-            "N/a"
+            "N/A"
         }
     }
 
@@ -117,7 +117,7 @@ class NumericalConverter {
         return try {
             number.toInt(16).toString()
         }catch (e:NumberFormatException){
-            "N/a"
+            "N/A"
         }
     }
 
@@ -125,7 +125,7 @@ class NumericalConverter {
         return try {
             number.toInt(8).toString()
         }catch (e:NumberFormatException){
-            "N/a"
+            "N/A"
         }
     }
 }
