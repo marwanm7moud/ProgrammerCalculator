@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      >
+      <androidx.appcompat.widget.Toolbar
+          android:id="@+id/toolbar"
+          android:layout_width="match_parent"
+          android:layout_height="?android:attr/actionBarSize"
+          app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent">
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:fontFamily="@font/dmsans_medium"
+              android:text="@string/app_title"
+              android:textColor="#2D3648"
+              android:textSize="20dp" />
+
+      </androidx.appcompat.widget.Toolbar>
+      <LinearLayout
+          android:id="@+id/linearLayout"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_margin="@dimen/main_dimen"
+          android:orientation="vertical"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="1.0"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:paddingBottom="@dimen/between_cards">
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginBottom="8dp"
+                  android:fontFamily="@font/dmsans_medium"
+                  android:text="@string/decimal"
+                  android:textColor="#2D3648"
+                  android:textSize="16dp" />
+
+              <EditText
+                  android:id="@+id/Decimal"
+                  android:focusableInTouchMode="true"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="@drawable/rounded_edittext" />
+
+          </LinearLayout>
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:paddingBottom="@dimen/between_cards">
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginBottom="8dp"
+                  android:fontFamily="@font/dmsans_medium"
+                  android:text="@string/hexadecimal"
+                  android:textColor="#2D3648"
+                  android:textSize="16dp" />
+
+              <EditText
+                  android:id="@+id/Hexadecimal"
+                  android:focusableInTouchMode="true"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="@drawable/rounded_edittext" />
+
+          </LinearLayout>
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:paddingBottom="@dimen/between_cards">
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginBottom="8dp"
+                  android:fontFamily="@font/dmsans_medium"
+                  android:text="@string/Octal"
+                  android:textColor="#2D3648"
+                  android:textSize="16dp" />
+
+              <EditText
+                  android:id="@+id/Octal"
+                  android:focusableInTouchMode="true"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="@drawable/rounded_edittext" />
+
+          </LinearLayout>
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginBottom="8dp"
+                  android:fontFamily="@font/dmsans_medium"
+                  android:text="@string/binary"
+                  android:textColor="#2D3648"
+                  android:textSize="16dp" />
+
+              <EditText
+                  android:inputType="textMultiLine"
+                  android:id="@+id/Binary"
+                  android:focusableInTouchMode="true"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="@drawable/rounded_edittext" />
+
+          </LinearLayout>
+
+          <Button
+              android:id="@+id/clear"
+              android:layout_width="wrap_content"
+              android:layout_height="48dp"
+              android:layout_gravity="center"
+              android:layout_marginTop="@dimen/between_last_edittext_and_button"
+              android:text="@string/clear" />
+
+      </LinearLayout>
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
