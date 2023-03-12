@@ -56,6 +56,7 @@
                   android:textSize="16dp" />
 
               <EditText
+                  android:digits="0123456789"
                   android:id="@+id/Decimal"
                   android:focusableInTouchMode="true"
                   android:layout_width="match_parent"
@@ -80,6 +81,7 @@
                   android:textSize="16dp" />
 
               <EditText
+                  android:digits="0123456789abcdef"
                   android:id="@+id/Hexadecimal"
                   android:focusableInTouchMode="true"
                   android:layout_width="match_parent"
@@ -104,6 +106,7 @@
                   android:textSize="16dp" />
 
               <EditText
+                  android:digits="01234567"
                   android:id="@+id/Octal"
                   android:focusableInTouchMode="true"
                   android:layout_width="match_parent"
@@ -127,6 +130,7 @@
                   android:textSize="16dp" />
 
               <EditText
+                  android:digits="01"
                   android:inputType="textMultiLine"
                   android:id="@+id/Binary"
                   android:focusableInTouchMode="true"

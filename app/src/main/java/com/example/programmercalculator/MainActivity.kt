@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
                 override fun afterTextChanged(s: Editable?) {}
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int
                 ) {
-                    if(binding.Decimal.isFocused &&binding.Decimal.text.isNotEmpty()) {
+                    if(binding.Decimal.isFocused &&binding.Decimal.text!=null) {
                         binding.Hexadecimal.setText(numericalConverter.toHexaDecimal(s.toString()))
                         binding.Octal.setText(numericalConverter.toOctal(s.toString()))
                         binding.Binary.setText(numericalConverter.toBinary(s.toString()))
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
                 override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
                 override fun afterTextChanged(s: Editable?) {}
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                    if(binding.Hexadecimal.isFocused&&binding.Hexadecimal.text.isNotEmpty()) {
+                    if(binding.Hexadecimal.isFocused&&binding.Hexadecimal.text!=null) {
                         binding.Decimal.setText(numericalConverter.hexaToDecimal(s.toString()))
                         binding.Octal.setText(numericalConverter.toOctal(numericalConverter.hexaToDecimal(s.toString())))
                         binding.Binary.setText(numericalConverter.toBinary(numericalConverter.hexaToDecimal(s.toString())))
@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
                 override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
                 override fun afterTextChanged(s: Editable?) {}
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                    if (binding.Octal.isFocused&&binding.Octal.text.isNotEmpty()) {
+                    if (binding.Octal.isFocused&&binding.Octal.text!=null) {
                         binding.Hexadecimal.setText(numericalConverter.toHexaDecimal(numericalConverter.octalToDecimal(s.toString())))
                         binding.Decimal.setText(numericalConverter.octalToDecimal(s.toString()))
                         binding.Binary.setText(numericalConverter.toBinary(numericalConverter.octalToDecimal(s.toString())))
@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
                 override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
                 override fun afterTextChanged(s: Editable?) {}
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                    if (binding.Binary.isFocused&&binding.Binary.text.isNotEmpty()) {
+                    if (binding.Binary.isFocused&&binding.Binary.text!=null) {
                         binding.Hexadecimal.setText(numericalConverter.toHexaDecimal(numericalConverter.binaryToDecimal(s.toString())))
                         binding.Octal.setText(numericalConverter.toOctal(numericalConverter.binaryToDecimal(s.toString())))
                         binding.Decimal.setText(numericalConverter.binaryToDecimal(s.toString()))
@@ -82,50 +82,74 @@ class MainActivity : AppCompatActivity() {
 
 class NumericalConverter {
     fun toHexaDecimal(number: String): String {
-        return try {
-            number.toInt().toString(16)
-        }catch (e:NumberFormatException){
-            "N/A"
+        if (number==""){
+           return number
+        }else {
+            return try {
+                number.toLong().toString(16)
+            } catch (e: NumberFormatException) {
+                "N/A"
+            }
         }
     }
 
     fun toOctal(number: String): String {
+        if (number==""){
+            return number
+        }else {
         return try {
-            number.toInt().toString(8)
+            number.toLong().toString(8)
         }catch (e:NumberFormatException){
             "N/A"
+        }
         }
     }
 
     fun toBinary(number: String): String {
-        return try {
-            number.toInt().toString(2)
-        }catch (e:NumberFormatException){
-            "N/A"
+        if (number==""){
+            return number
+        }else {
+            return try {
+                number.toLong().toString(2)
+            } catch (e: NumberFormatException) {
+                "N/A"
+            }
         }
     }
 
     fun binaryToDecimal(number: String): String {
-        return try {
-            number.toInt(2).toString()
-        }catch (e:NumberFormatException){
-            "N/A"
+        if (number==""){
+            return number
+        }else {
+            return try {
+                number.toLong(2).toString()
+            } catch (e: NumberFormatException) {
+                "N/A"
+            }
         }
     }
 
     fun hexaToDecimal(number: String): String {
-        return try {
-            number.toInt(16).toString()
-        }catch (e:NumberFormatException){
-            "N/A"
+        if (number==""){
+            return number
+        }else {
+            return try {
+                number.toLong(16).toString()
+            } catch (e: NumberFormatException) {
+                "N/A"
+            }
         }
     }
 
     fun octalToDecimal(number: String): String {
-        return try {
-            number.toInt(8).toString()
-        }catch (e:NumberFormatException){
-            "N/A"
+        if (number==""){
+            return number
+        }else {
+            return try {
+                number.toLong(8).toString()
+            } catch (e: NumberFormatException) {
+                "N/A"
+            }
         }
     }
 }
